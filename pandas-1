@@ -1,0 +1,111 @@
+#Question -1----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->>
+
+import pandas as pd
+
+data = [4, 8, 15, 16, 23, 42]
+series = pd.Series(data)
+print(series)
+
+
+#Question -2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->>
+
+import pandas as pd
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+series = pd.Series(my_list)
+print(series)
+
+
+#Question -3----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->>
+
+To create a Pandas DataFrame with the given data and print it, you can use the pd.DataFrame() function. Here's an example:
+
+import pandas as pd
+
+data = {
+    'Name': ['Alice', 'Bob', 'Claire'],
+    'Age': [25, 30, 27],
+    'Gender': ['Female', 'Male', 'Female']
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+
+Output:
+
+     Name  Age  Gender
+0   Alice   25  Female
+1     Bob   30    Male
+2  Claire   27  Female
+
+#Question -4----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->>
+
+
+In pandas, a DataFrame is a two-dimensional labeled data structure that can store data of different types (numeric, string, boolean, etc.) in a tabular form, similar to a spreadsheet or SQL table.
+It consists of rows and columns, where each column can be of a different data type. A DataFrame is a fundamental object in pandas and is often used for data manipulation, analysis, and preprocessing.
+
+On the other hand, a Series in pandas is a one-dimensional labeled array that can hold data of any type (numeric, string, object, etc.).
+It is similar to a column in a DataFrame or a single column of data in a spreadsheet. A Series also has an associated index, which labels each element in the Series.
+
+#Question -5----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->>
+Pandas provides a wide range of functions to manipulate data in a DataFrame. Here are some common functions:
+
+sort_values(): Sorts the DataFrame by one or more columns.
+1-  df.sort_values(by='column_name', ascending=False)  # Sorts the DataFrame by a specific column in descending order
+
+
+groupby(): Groups the DataFrame by one or more columns and performs an aggregation operation on the groups.
+2-  df.groupby('column_name')['another_column'].mean()  # Calculates the mean of 'another_column' for each group in 'column_name'
+
+
+fillna(): Fills missing values in the DataFrame with a specified value or a strategy like mean or median.
+3-  df.fillna(0)  # Fills missing values in the DataFrame with 0
+
+apply(): Applies a function to each element, row, or column of the DataFrame.
+4-  df['column_name'].apply(lambda x: x * 2)  # Multiplies each element of 'column_name' by 2
+These are just a few examples of the many functions available in Pandas for data manipulation. The choice of function depends on the specific data manipulation task you want to perform on your DataFrame.
+
+
+
+
+
+
+
+#Question -6----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->>
+
+Among the options provided (Series, DataFrame, Panel), both Series and DataFrame are mutable in nature, while Panel is not.
+
+Series: A Series in pandas is mutable, meaning you can modify its elements, add or remove elements, and change its values in place.
+
+DataFrame: Similarly, a DataFrame in pandas is mutable. You can modify individual cell values, add or remove columns, and perform various operations to manipulate the data within the DataFrame.
+
+Panel: However, Panel is no longer recommended for use in pandas and is considered deprecated. It was a three-dimensional data structure in older versions of pandas,
+but it has been largely replaced by MultiIndex DataFrames, which offer more flexibility and functionality. Panel was mutable, but it is not commonly used in modern pandas workflows.
+
+So, in summary, both Series and DataFrame are mutable in pandas, while Panel is deprecated and no longer recommended for use.
+
+#Question -7----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->>
+
+Here's an example:
+
+import pandas as pd
+
+# Creating multiple Series
+name_series = pd.Series(['John', 'Alice', 'Bob'])
+age_series = pd.Series([25, 30, 35])
+city_series = pd.Series(['New York', 'London', 'Paris'])
+
+# Combining the Series into a DataFrame
+data = {'Name': name_series, 'Age': age_series, 'City': city_series}
+df = pd.DataFrame(data)
+
+# Printing the DataFrame
+print(df)
+
+
+Output:
+   Name  Age      City
+0  John   25  New York
+1 Alice   30    London
+2   Bob   35     Paris
